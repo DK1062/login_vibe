@@ -52,6 +52,8 @@ models/obesity_model.pkl
 ### 생성 파일
 
 - `flask-server/app.py`
+- `flask-server/models/obesity_model.pkl`
+- `flask-server/models/obesity_model_metadata.json`
 
 ### 역할
 
@@ -59,6 +61,7 @@ models/obesity_model.pkl
 - `flask-cors` 적용
 - 저장된 모델 로드
 - 서버 상태 확인 API 제공
+- 건강검진 데이터가 없을 때 사용할 개발용 BMI 기준 모델 제공
 
 ### API
 

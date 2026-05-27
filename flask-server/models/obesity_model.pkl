@@ -1,0 +1,17 @@
+(dp0
+Vmodel_type
+p1
+Vbmi_rule
+p2
+sVobesity_bmi_threshold
+p3
+F25.0
+sVnormal_label
+p4
+Vnormal
+p5
+sVobese_label
+p6
+Vobese
+p7
+s.

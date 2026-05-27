@@ -1,0 +1,25 @@
+﻿{
+    "model_type":  "bmi_rule",
+    "dataset":  "C:\\Users\\pc07-00\\Documents\\DK\\data\\data\\health_checkup.CSV",
+    "features":  [
+                     "height",
+                     "weight"
+                 ],
+    "source_columns":  {
+                           "height":  "신장(5cm단위)",
+                           "weight":  "체중(5kg단위)"
+                       },
+    "target":  "result",
+    "obesity_rule":  "BMI \u003e= 25",
+    "normal_label":  "normal",
+    "obese_label":  "obese",
+    "valid_sample_count":  1000000,
+    "normal_count":  631645,
+    "obese_count":  368355,
+    "average_height":  162.73,
+    "average_weight":  64.56,
+    "average_bmi":  24.23,
+    "min_bmi":  11.02,
+    "max_bmi":  59.45,
+    "created_by":  "PowerShell CSV preprocessing because Python runtime is unavailable"
+}

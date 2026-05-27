@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<nav th:fragment="header" class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" th:href="@{/}">Health AI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="메뉴 열기">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/predict}">AI 예측</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/questions}">게시판</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link" th:href="@{/members}">회원 목록</a>
+                </li>
+            </ul>
+
+            <div class="d-flex gap-2 align-items-lg-center">
+                <div class="navbar-text small text-muted me-lg-2" sec:authorize="isAuthenticated()">
+                    <span sec:authentication="name">user</span>님
+                </div>
+                <a class="btn btn-outline-primary btn-sm" th:href="@{/login}" sec:authorize="isAnonymous()">로그인</a>
+                <a class="btn btn-primary btn-sm" th:href="@{/members/signup}" sec:authorize="isAnonymous()">회원가입</a>
+                <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">로그아웃</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
